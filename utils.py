@@ -20,7 +20,8 @@ def create_plot(type, series, title, xlabel, ylabel, name_file, rotation=0, bott
     :param bottom: percentage of blank space under the plot in the image
     :param grid: boolean for tracing a grid under the plot
     """
-    print(series)
+    plt.clf()
+    print(f"Plotting\n{series}")
     if type == 'line':
         sns.lineplot(series, marker='o')
     elif type == 'box':

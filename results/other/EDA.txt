@@ -1,0 +1,158 @@
+### Exploratory data analysis on df_transfer ###
+
+Dataframe head:
+   player_id transfer_date transfer_season  from_club_id  to_club_id  \
+0      16136    2026-07-01           26/27           417         123   
+1    1138758    2026-07-01           26/27           336         631   
+2     195778    2026-06-30           25/26            79          27   
+3     569033    2026-06-30           25/26            39          27   
+4     626913    2026-06-30           25/26           398         380   
+
+   from_club_name   to_club_name  transfer_fee  market_value_in_eur  \
+0        OGC Nice        Retired           NaN             500000.0   
+1     Sporting CP        Chelsea    52140000.0           45000000.0   
+2   VfB Stuttgart  Bayern Munich           0.0           12000000.0   
+3  1.FSV Mainz 05  Bayern Munich           0.0            4000000.0   
+4           Lazio    Salernitana           0.0           15000000.0   
+
+       player_name  
+0            Dante  
+1   Geovany Quenda  
+2  Alexander Nübel  
+3     Armindo Sieb  
+4      Boulaye Dia  
+
+Number of unique players: 10448
+Number of unique departure clubs: 9711
+Number of unique arrival clubs: 7367
+Number of unique seasons: 34
+
+For my curiosity:
+Transfers 'in the future':
+   player_id transfer_date transfer_season  from_club_id  to_club_id  \
+0      16136    2026-07-01           26/27           417         123   
+1    1138758    2026-07-01           26/27           336         631   
+
+  from_club_name to_club_name  transfer_fee  market_value_in_eur  \
+0       OGC Nice      Retired           NaN             500000.0   
+1    Sporting CP      Chelsea    52140000.0           45000000.0   
+
+      player_name  
+0           Dante  
+1  Geovany Quenda  
+
+Retired players that went 'back in the game':
+      player_id transfer_date transfer_season  from_club_id  to_club_id  \
+2073      44058    2024-10-02           24/25           123         131   
+
+     from_club_name to_club_name  transfer_fee  market_value_in_eur  \
+2073        Retired    Barcelona           NaN            6000000.0   
+
+            player_name  
+2073  Wojciech Szczesny  
+
+Description of numerical columns:
+       transfer_fee  market_value_in_eur
+count  5.193100e+04         4.933000e+04
+mean   1.115650e+06         2.488055e+06
+std    5.258424e+06         5.901403e+06
+min    0.000000e+00         1.000000e+04
+25%    0.000000e+00         2.250000e+05
+50%    0.000000e+00         6.000000e+05
+75%    0.000000e+00         2.000000e+06
+max    1.800000e+08         1.800000e+08
+
+Added a new column transfer_season_complete:
+  transfer_season transfer_season_complete
+0           26/27                  2026/27
+1           26/27                  2026/27
+2           25/26                  2025/26
+3           25/26                  2025/26
+4           25/26                  2025/26
+
+Number of transfers per season:
+   transfer_season_complete  count
+33                  1993/94      1
+30                  1994/95      3
+32                  1995/96      1
+29                  1996/97      3
+28                  1997/98      6
+27                  1998/99     16
+26                  1999/00     24
+25                  2000/01     33
+24                  2001/02     72
+23                  2002/03     83
+21                  2003/04    127
+20                  2004/05    227
+19                  2005/06    340
+18                  2006/07    497
+17                  2007/08    699
+16                  2008/09    865
+15                  2009/10   1169
+14                  2010/11   1557
+13                  2011/12   2027
+12                  2012/13   2348
+11                  2013/14   2833
+10                  2014/15   3403
+9                   2015/16   4050
+8                   2016/17   4459
+7                   2017/18   5301
+6                   2018/19   5986
+4                   2019/20   6512
+3                   2020/21   6817
+2                   2021/22   7393
+1                   2022/23   8129
+0                   2023/24   8516
+5                   2024/25   6044
+22                  2025/26    103
+31                  2026/27      2
+
+Average transfer fee payed by arrival clubs:
+     to_club_name  average_transfer_fee
+0         SH SIPG          2.500000e+07
+1        Al-Hilal          2.344286e+07
+2     TJ Quanjian          2.000000e+07
+3       DL Yifang          1.552333e+07
+4        Al-Nassr          1.465000e+07
+5      Al-Ittihad          1.438200e+07
+6       Barcelona          1.299796e+07
+7         Man Utd          1.269368e+07
+8        Man City          1.202368e+07
+9    San Diego FC          1.200000e+07
+10       Paris SG          1.134157e+07
+11        Chelsea          1.096439e+07
+12    Real Madrid          1.072476e+07
+13        Arsenal          1.050600e+07
+14     Al-Sadd SC          1.000000e+07
+15  Bayern Munich          9.759804e+06
+16       Columbus          9.550000e+06
+17       West Ham          8.915631e+06
+18       BJ Guoan          8.400000e+06
+19  Bor. Dortmund          8.385421e+06
+
+Average market value in eur per season over the last 20 years:
+                          average_market_value
+transfer_season_complete                      
+2004/05                           7.062500e+05
+2005/06                           1.254902e+06
+2006/07                           5.912338e+05
+2007/08                           1.201042e+06
+2008/09                           7.702727e+05
+2009/10                           8.902308e+05
+2010/11                           9.739272e+05
+2011/12                           1.265054e+06
+2012/13                           1.409600e+06
+2013/14                           1.877064e+06
+2014/15                           1.778033e+06
+2015/16                           1.786500e+06
+2016/17                           1.885181e+06
+2017/18                           2.113129e+06
+2018/19                           2.452177e+06
+2019/20                           3.104370e+06
+2020/21                           2.521078e+06
+2021/22                           2.484947e+06
+2022/23                           2.743434e+06
+2023/24                           2.665607e+06
+2024/25                           3.255490e+06
+2025/26                           5.738250e+06
+2026/27                           2.275000e+07

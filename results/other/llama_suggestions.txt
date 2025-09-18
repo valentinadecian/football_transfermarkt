@@ -1,0 +1,3 @@
+1. Which football clubs have the highest average transfer fees paid for their players?
+2. How has the market value of football players changed over time, considering both the average market value and the number of players with a known market value?
+3. Which players have the highest average transfer fees paid for their transfer, considering both the average transfer fee and the number of players with a known transfer fee?
