@@ -2,7 +2,7 @@
 
 The dataset is taken from Kaggle ([link here](https://www.kaggle.com/datasets/davidcariboo/player-scores/data)).
 
-There are many files available. I have loaded *transfers.csv* and *clubs.csv* so far. For more information about data see the README in the data folder.
+There are many files available. I have loaded *transfers.csv* and *clubs.csv* so far. For more information about data see the *README* in the *data* folder.
 
 The main file is *eda.py*, which contains the flow of an explorative data analysis of the dataset *transfers.csv*. Auxiliary functions and packages import are in *utils.py*. In *test_utils.py* there are simple tests for functions of *utils.py*. 
 
